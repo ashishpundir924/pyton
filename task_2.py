@@ -1,5 +1,5 @@
 # task 2 for program for shopping list
-option_1: str = input('To create a list type list, to call the saved list type call. :- ')
+
 
 data_base = {"supermarket": ['mike', 'chocolate', 'egg', 'cigarette'], "shopping_from_india": [],
              "shopping_for_india": [], "shopping_from_poland": []}
@@ -19,6 +19,8 @@ def call_f():
             print(it)
 
 
+option_1: str = input('To create a list type list, to call the saved list type call. :- ')
+
 if option_1 == 'list':
     new_list = input("give a name of list:-")
     data_base[new_list] = []
@@ -28,6 +30,14 @@ if option_1 == 'list':
         items1 = input("enter i")
         add_items(items1)
     else:
-        print(data_base)
+        for x in data_base[new_list]:
+            print('you items is added:-', x)
+        else:
+            end = input('To save Enter stop:-')
+            if end == 'stop':
+                print('thanks you added all items')
+                call_f()
+
+
 elif option_1 == 'call':
     call_f()
