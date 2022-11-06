@@ -5,8 +5,16 @@ data_base = {"supermarket": ['mike', 'chocolate', 'egg', 'cigarette'], "shopping
              "shopping_for_india": [], "shopping_from_poland": []}
 
 
-def add_items(items):
-    return data_base.update({new_list: [items]})
+def add_items() -> object:
+    new_list = input("give a name of list:-")
+    data_base[new_list] = [input("1:Enter the itme:-  "), input("2:Enter the itme:-  "), input("3:Enter the itme:- "),
+                           input("4:Enter the itme:- ")]
+    for x in data_base[new_list]:
+        print(x)
+    else:
+        end = input('to save the list enter stop:- ')
+        if end == 'stop':
+            call_f()
 
 
 def call_f():
@@ -22,22 +30,8 @@ def call_f():
 option_1: str = input('To create a list type list, to call the saved list type call. :- ')
 
 if option_1 == 'list':
-    new_list = input("give a name of list:-")
-    data_base[new_list] = []
-
-    for x in range(3):
-
-        items1 = input("enter i")
-        add_items(items1)
-    else:
-        for x in data_base[new_list]:
-            print('you items is added:-', x)
-        else:
-            end = input('To save Enter stop:-')
-            if end == 'stop':
-                print('thanks you added all items')
-                call_f()
-
+    add_items()
 
 elif option_1 == 'call':
+
     call_f()
